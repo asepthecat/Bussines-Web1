@@ -1,0 +1,283 @@
+/* Reset dan pengaturan dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #000;
+  color: #f1f1f1;
+  min-height: 100vh;
+  line-height: 1.5;
+  position: relative;
+  overflow-x: hidden; /* cegah horizontal scroll */
+}
+
+/* Gradient dan efek blur */
+.image-gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.layer-blur {
+  width: 30rem;
+  height: 0;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  box-shadow: 0 0 120px 60px #a259ff;
+  transform: rotate(30deg);
+  z-index: -2;
+}
+
+/* Container dan header */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  z-index: 999;
+}
+
+.logo {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-left: -5%;
+  z-index: 999;
+}
+
+nav a {
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #888;
+}
+
+.btn-signin {
+  background: #f1f1f1;
+  color: #000;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  z-index: 10; /* Pastikan tombol di atas robot */
+}
+
+.btn-signin:hover {
+  background: #888;
+}
+
+/* Main dan content */
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(90vh - 6rem);
+  position: relative;
+  z-index: 999;
+}
+
+.content {
+  max-width: 40rem;
+  margin-left: 10%;
+  z-index: 999;
+}
+
+.tag-box {
+  position: relative;
+  width: 18rem;
+  height: 2.5rem;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #a259ff, #f1f1f1, #a259ff);
+  background-size: 200% 200%;
+  animation: gradient-animation 2.5s linear infinite;
+  box-shadow: 0 0 20px #a259ff33;
+}
+
+@keyframes gradient-animation {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.tag {
+  position: absolute;
+  inset: 3px;
+  background: #000;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+
+.tag:hover {
+  color: #a259ff;
+}
+
+.content h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin: 2rem 0;
+  line-height: 1.2;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.description {
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  max-width: 35rem;
+  color: #888;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.btn-get-started {
+  text-decoration: none;
+  border: 1px solid #333;
+  padding: 0.7rem 1.2rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: #f1f1f1;
+  background: transparent;
+  transition: background 0.3s;
+}
+
+.btn-get-started:hover {
+  background: #222;
+}
+
+/* Robot 3D */
+.robot-3d {
+  position: absolute;
+  top: 15%;
+  right: -13%;
+  transform: scale(0.8);
+  transform-origin: top right;
+  transition: transform 0.3s ease, top 0.3s ease, right 0.3s ease;
+  z-index: 1; /* Pastikan di bawah tombol */
+}
+
+/* Tablet Settings */
+@media (max-width: 1300px) {
+  header {
+    padding: 1rem 0.5rem;
+  }
+
+  .content {
+    margin-top: 85%;
+    max-width: 90%;
+    margin-left: 5%;
+  }
+
+  .robot-3d {
+    transform: scale(0.8);
+    top: -20%;
+    right: 2%;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 1rem;
+    flex-wrap: wrap;
+  }
+
+  nav {
+    display: none; /* Sembunyikan menu desktop */
+  }
+
+  .logo {
+    font-size: 2rem;
+    flex: 1 1 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .btn-signin {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+    flex: 1 1 100%;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 10; /* Pastikan tombol di atas robot */
+  }
+
+  .content {
+    margin-top: 6rem; /* Tambah jarak agar tidak bertabrakan */
+    max-width: 90%;
+    margin-left: 5%;
+    padding: 0 1rem;
+  }
+
+  .tag-box {
+    width: 12rem;
+    height: 2rem;
+  }
+
+  .content h1 {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 2rem;
+  }
+
+  .btn-get-started {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Perbaikan posisi robot agar tidak bertabrakan dengan tombol */
+  .robot-3d {
+    top: 40%;      /* Geser ke bawah */
+    right: 5%;     /* Geser ke kiri */
+    transform: scale(0.5);
+    transform-origin: center;
+    z-index: 1;
+  }
+}

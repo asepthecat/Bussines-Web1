@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Website with Spline</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Gradient dan efek blur -->
+  <img src="gradient.png" class="image-gradient" alt="Gradient" />
+  <div class="layer-blur"></div>
+
+  <div class="container">
+    <header>
+      <h1 class="logo">HI GUYS</h1>
+      <nav>
+        <a href="#">Company</a>
+        <a href="#">Features</a>
+        <a href="#">Resources</a>
+        <a href="#">Docs</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="content">
+        <div class="tag-box">
+          <div class="tag">INTRODUCING</div>
+        </div>
+        <h1>EMAIL FOR<br>DEVELOPER</h1>
+        <p class="description">
+          Halo Semuanya! apabila ingin berkenalan atau memiliki kepentingan bisnis, bisa send email!
+        </p>
+        <div class="buttons">
+          <a href="mailto:zalfadeizrantio.2024@student.uny.ac.id" class="btn-get-started">Get Started</a>
+        </div>
+      </div>
+      <!-- Embed model 3D dari Spline di sini -->
+      <!-- Contoh: -->
+      <!-- <iframe src="https://my.spline.design/robot-xyz/..." frameborder="0"></iframe> -->
+    </main>
+     <spline-viewer class="robot-3d" url="https://prod.spline.design/4mUt0vx90CG6uE1q/scene.splinecode"></spline-viewer>
+  </div>
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.96/build/spline-viewer.js"></script>
+</body>
+</html>
